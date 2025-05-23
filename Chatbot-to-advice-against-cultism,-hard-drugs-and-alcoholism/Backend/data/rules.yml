@@ -1,0 +1,103 @@
+version: "3.1"
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Say greet anytime the user greets
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Emergency response takes priority
+    steps:
+      - intent: emergency
+      - action: utter_emergency_response
+      - action: action_assess_emergency_level
+
+  - rule: Activate emergency protocol for high-risk situations
+    condition:
+      - slot_was_set:
+          - emergency_level: critical
+    steps:
+      - action: utter_emergency_response
+      - action: action_provide_resources
+
+  - rule: Provide cultism information
+    steps:
+      - intent: ask_about_cultism
+      - action: utter_cultism_info
+
+  - rule: Handle cultism pressure
+    steps:
+      - intent: cultism_pressure
+      - action: utter_cultism_pressure_advice
+
+  - rule: Help with cultism escape
+    steps:
+      - intent: cultism_escape
+      - action: utter_cultism_escape_help
+
+  - rule: Provide alcohol information
+    steps:
+      - intent: ask_about_alcohol
+      - action: utter_alcohol_info
+
+  - rule: Handle alcohol pressure
+    steps:
+      - intent: alcohol_pressure
+      - action: utter_alcohol_pressure_advice
+
+  - rule: Help with alcohol problems
+    steps:
+      - intent: alcohol_problem
+      - action: utter_alcohol_problem_help
+      - action: action_assess_emergency_level
+
+  - rule: Provide drug information
+    steps:
+      - intent: ask_about_drugs
+      - action: utter_drug_info
+
+  - rule: Handle drug pressure
+    steps:
+      - intent: drug_pressure
+      - action: utter_drug_pressure_advice
+
+  - rule: Help with drug problems
+    steps:
+      - intent: drug_problem
+      - action: utter_drug_problem_help
+      - action: action_assess_emergency_level
+
+  - rule: Provide healthy alternatives
+    steps:
+      - intent: ask_alternatives
+      - action: utter_healthy_alternatives
+
+  - rule: Explain consequences
+    steps:
+      - intent: ask_consequences
+      - action: utter_consequences_overview
+
+  - rule: Support family concerns
+    steps:
+      - intent: family_concerns
+      - action: utter_family_support
+
+  - rule: Help with academic recovery
+    steps:
+      - intent: academic_impact
+      - action: utter_academic_recovery
+
+  - rule: General help request
+    steps:
+      - intent: ask_for_help
+      - action: utter_ask_how_can_help
+
+  - rule: Default fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default

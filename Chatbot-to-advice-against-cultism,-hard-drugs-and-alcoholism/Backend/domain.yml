@@ -1,0 +1,379 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - ask_about_cultism
+  - cultism_pressure
+  - cultism_escape
+  - ask_about_alcohol
+  - alcohol_pressure
+  - alcohol_problem
+  - ask_about_drugs
+  - drug_pressure
+  - drug_problem
+  - ask_for_help
+  - emergency
+  - ask_alternatives
+  - ask_consequences
+  - family_concerns
+  - academic_impact
+
+entities:
+  - substance_type
+  - help_type
+  - severity_level
+
+slots:
+  current_issue:
+    type: categorical
+    values:
+      - cultism
+      - alcohol
+      - drugs
+      - general
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  help_needed:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  emergency_level:
+    type: categorical
+    values:
+      - low
+      - medium
+      - high
+      - critical
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm here to provide guidance and support regarding important student safety issues. How can I help you today?"
+    - text: "Hi there! I'm a counseling assistant focused on helping students make informed decisions about their wellbeing. What would you like to discuss?"
+
+  utter_goodbye:
+    - text: "Take care and remember - you have the strength to make positive choices. Feel free to reach out anytime you need support."
+    - text: "Goodbye! Remember, seeking help is a sign of strength, not weakness. Stay safe and make wise decisions."
+
+  utter_ask_how_can_help:
+    - text: "I'm here to help with concerns about cultism, alcohol abuse, or drug use. What specific issue would you like to discuss?"
+
+  utter_cultism_info:
+    - text: |
+        Cultism refers to secret societies or groups that often engage in harmful, illegal, or dangerous activities. Here are key warning signs:
+
+        🚩 **Red Flags:**
+        - Excessive secrecy about activities
+        - Demanding absolute loyalty or obedience
+        - Isolation from family and friends
+        - Violent initiation rituals
+        - Illegal activities or criminal behavior
+        - Financial exploitation
+        - Threats or intimidation
+
+        **Remember:** Legitimate student organizations are transparent about their activities and don't require harmful initiation rites.
+
+  utter_cultism_pressure_advice:
+    - text: |
+        Facing pressure to join a cult or secret society? Here's what you can do:
+
+        💪 **Stand Firm:**
+        - Say "NO" clearly and confidently
+        - You don't owe anyone an explanation
+        - True friends respect your decisions
+        - Trust your instincts if something feels wrong
+
+        🛡️ **Protect Yourself:**
+        - Avoid being alone with persistent recruiters
+        - Document any threats or harassment
+        - Inform trusted adults or authorities
+        - Stay close to positive peer groups
+
+        Remember: Your safety and future are more important than fitting in with the wrong crowd.
+
+  utter_cultism_escape_help:
+    - text: |
+        If you're already involved and want to leave:
+
+        🆘 **Immediate Steps:**
+        - Contact campus security or local police if threatened
+        - Reach out to trusted family members or counselors
+        - Document any evidence of illegal activities
+        - Seek protection if you feel unsafe
+
+        📞 **Get Professional Help:**
+        - Campus counseling services
+        - Student affairs office
+        - Local law enforcement
+        - Legal aid if needed
+
+        **Important:** Leaving may be challenging, but your safety and future matter most. Professional help is available.
+
+  utter_alcohol_info:
+    - text: |
+        Alcohol can seriously impact your academic performance, health, and future:
+
+        ⚠️ **Academic Risks:**
+        - Impaired memory and concentration
+        - Poor decision-making abilities
+        - Increased absenteeism
+        - Lower grades and academic probation
+
+        🏥 **Health Consequences:**
+        - Liver damage and brain development issues
+        - Increased risk of accidents and injuries
+        - Mental health problems
+        - Addiction potential
+
+        ⚖️ **Legal/Social Issues:**
+        - Legal troubles (DUI, underage drinking)
+        - Damaged relationships
+        - Poor reputation
+        - Future career impact
+
+  utter_alcohol_pressure_advice:
+    - text: |
+        Dealing with pressure to drink? You're not alone:
+
+        💬 **Confident Responses:**
+        - "I'm the designated driver tonight"
+        - "I have an early class/exam tomorrow"
+        - "I don't drink, but thanks"
+        - "I'm on medication that doesn't mix with alcohol"
+
+        🎯 **Smart Strategies:**
+        - Hold a non-alcoholic drink to blend in
+        - Suggest alternative activities
+        - Find like-minded friends who don't drink
+        - Leave parties early if pressure increases
+
+        **Truth:** Real friends respect your choices. Anyone pressuring you isn't looking out for your best interests.
+
+  utter_alcohol_problem_help:
+    - text: |
+        Recognizing you might have a drinking problem takes courage:
+
+        🚨 **Warning Signs You Mentioned:**
+        - Drinking daily or feeling you need alcohol
+        - Academic or relationship problems due to drinking
+        - Unable to stop once you start
+        - Blackouts or memory problems
+
+        🆘 **Get Help Now:**
+        - Campus counseling center
+        - Alcoholics Anonymous (AA) meetings
+        - Student health services
+        - National helpline: 1-800-662-4357
+
+        **Remember:** Addiction is a medical condition, not a moral failing. Treatment works, and recovery is possible.
+
+  utter_drug_info:
+    - text: |
+        Hard drugs pose severe risks to students:
+
+        🧠 **Brain & Academic Impact:**
+        - Permanent brain damage possible
+        - Severe concentration problems
+        - Memory loss and cognitive decline
+        - Academic failure and expulsion
+
+        ⚖️ **Legal Consequences:**
+        - Criminal charges and jail time
+        - Permanent criminal record
+        - Loss of financial aid eligibility
+        - Career opportunities destroyed
+
+        🏥 **Health Risks:**
+        - Overdose and death
+        - Addiction and dependency
+        - Mental health disorders
+        - Infectious diseases (HIV, Hepatitis)
+
+  utter_drug_pressure_advice:
+    - text: |
+        Facing drug pressure? Protect yourself:
+
+        🛡️ **Refusal Strategies:**
+        - "I don't do drugs, period"
+        - "I've seen what it does to people"
+        - "I have too much to lose"
+        - Simply walk away - no explanation needed
+
+        🚨 **Safety Tips:**
+        - Avoid places where drugs are used
+        - Report drug dealers to authorities
+        - Choose friends who share your values
+        - Trust your instincts about dangerous situations
+
+        **Reality Check:** People offering you drugs don't care about your future - you should.
+
+  utter_drug_problem_help:
+    - text: |
+        Drug addiction is serious but treatable:
+
+        🆘 **Immediate Actions:**
+        - Contact student health services TODAY
+        - Call SAMHSA helpline: 1-800-662-4357
+        - Consider inpatient or outpatient treatment
+        - Remove drug contacts from your phone
+
+        💊 **Treatment Options:**
+        - Medical detox programs
+        - Counseling and therapy
+        - Support groups (NA, SMART Recovery)
+        - Medication-assisted treatment
+
+        **Hope:** Thousands of students recover from addiction every year. You can be one of them.
+
+  utter_emergency_response:
+    - text: |
+        🚨 **EMERGENCY RESOURCES - USE IMMEDIATELY:**
+
+        **Call 911 if:**
+        - Someone is threatening you with violence
+        - You're in immediate physical danger
+        - Someone has overdosed or is unconscious
+
+        **Campus Resources:**
+        - Campus Security: [Your campus emergency number]
+        - Campus Crisis Hotline
+        - Student Affairs Emergency Line
+
+        **National Resources:**
+        - Crisis Text Line: Text HOME to 741741
+        - National Suicide Prevention: 988
+        - SAMHSA Helpline: 1-800-662-4357
+
+        **Your safety is the priority. Don't hesitate to call for help.**
+
+  utter_healthy_alternatives:
+    - text: |
+        Plenty of fun, fulfilling activities await:
+
+        🎯 **Social Activities:**
+        - Join clubs related to your interests
+        - Intramural sports and fitness groups
+        - Volunteer organizations
+        - Study groups and academic societies
+
+        🎨 **Personal Development:**
+        - Creative arts (music, writing, painting)
+        - Learning new skills or hobbies
+        - Part-time jobs or internships
+        - Travel and cultural experiences
+
+        💪 **Health & Wellness:**
+        - Regular exercise and outdoor activities
+        - Meditation and mindfulness practices
+        - Healthy cooking and nutrition
+        - Adventure sports and hiking
+
+        **Bonus:** These activities build your resume and create lasting friendships!
+
+  utter_consequences_overview:
+    - text: |
+        The consequences of poor choices can be life-altering:
+
+        📚 **Academic Impact:**
+        - Failing grades and academic probation
+        - Loss of scholarships and financial aid
+        - Extended time to graduate (more debt)
+        - Damage to academic reputation
+
+        ⚖️ **Legal Troubles:**
+        - Criminal charges and jail time
+        - Permanent criminal record
+        - Difficulty finding employment
+        - Professional license restrictions
+
+        👨‍👩‍👧‍👦 **Personal Relationships:**
+        - Family disappointment and lost trust
+        - Friendship deterioration
+        - Romantic relationship problems
+        - Social isolation
+
+        💰 **Financial Costs:**
+        - Legal fees and fines
+        - Medical bills
+        - Lost earning potential
+        - Rehabilitation costs
+
+  utter_family_support:
+    - text: |
+        Family relationships can be repaired with effort:
+
+        💝 **Rebuilding Trust:**
+        - Be completely honest about your situation
+        - Show commitment to change through actions
+        - Accept help and treatment they offer
+        - Be patient - trust takes time to rebuild
+
+        🗣️ **Communication Tips:**
+        - Listen to their concerns without defending
+        - Express genuine remorse for harm caused
+        - Share your plan for positive change
+        - Ask for their support in your recovery
+
+        **Remember:** Most families want to help, even when they're angry or disappointed. Your recovery can strengthen family bonds.
+
+  utter_academic_recovery:
+    - text: |
+        Academic recovery is possible with the right approach:
+
+        📖 **Immediate Steps:**
+        - Meet with academic advisors honestly
+        - Explore incomplete grades vs. withdrawals
+        - Utilize tutoring and study support services
+        - Consider reducing course load temporarily
+
+        🎯 **Long-term Strategy:**
+        - Address underlying issues (addiction, mental health)
+        - Develop strong study habits and routines
+        - Build relationships with professors
+        - Join study groups and academic support
+
+        **Hope:** Many students recover academically after addressing personal issues. Your education is worth fighting for.
+
+  utter_ask_for_more_help:
+    - text: "Would you like more specific information about any of these topics, or do you have other concerns you'd like to discuss?"
+
+  utter_default:
+    - text: "I understand you're reaching out, and I want to help. Could you tell me more about what specific situation you're dealing with regarding cultism, alcohol, or drug concerns?"
+
+actions:
+  - action_assess_emergency_level
+  - action_provide_resources
+  - action_schedule_followup
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_how_can_help
+  - utter_cultism_info
+  - utter_cultism_pressure_advice
+  - utter_cultism_escape_help
+  - utter_alcohol_info
+  - utter_alcohol_pressure_advice
+  - utter_alcohol_problem_help
+  - utter_drug_info
+  - utter_drug_pressure_advice
+  - utter_drug_problem_help
+  - utter_emergency_response
+  - utter_healthy_alternatives
+  - utter_consequences_overview
+  - utter_family_support
+  - utter_academic_recovery
+  - utter_ask_for_more_help
+  - utter_default
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false

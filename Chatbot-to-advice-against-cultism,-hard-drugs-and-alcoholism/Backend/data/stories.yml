@@ -1,0 +1,160 @@
+version: "3.1"
+
+stories:
+  - story: Basic greeting and cultism inquiry
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_about_cultism
+      - action: utter_cultism_info
+
+  - story: Cultism pressure with follow up
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: cultism_pressure
+      - action: utter_cultism_pressure_advice
+      - intent: affirm
+
+  - story: Cultism escape with resources
+    steps:
+      - intent: cultism_escape
+      - action: utter_cultism_escape_help
+      - intent: affirm
+      - action: action_provide_resources
+
+  - story: Alcohol information with alternatives
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_about_alcohol
+      - action: utter_alcohol_info
+      - intent: ask_alternatives
+      - action: utter_healthy_alternatives
+
+  - story: Alcohol pressure with alternatives
+    steps:
+      - intent: alcohol_pressure
+      - action: utter_alcohol_pressure_advice
+      - intent: ask_alternatives
+      - action: utter_healthy_alternatives
+
+  - story: Alcohol problem with emergency assessment
+    steps:
+      - intent: alcohol_problem
+      - action: utter_alcohol_problem_help
+      - action: action_assess_emergency_level
+      - intent: affirm
+      - action: action_provide_resources
+
+  - story: Drug information with consequences
+    steps:
+      - intent: ask_about_drugs
+      - action: utter_drug_info
+      - intent: ask_consequences
+      - action: utter_consequences_overview
+
+  - story: Drug pressure with alternatives
+    steps:
+      - intent: drug_pressure
+      - action: utter_drug_pressure_advice
+      - intent: ask_alternatives
+      - action: utter_healthy_alternatives
+
+  - story: Drug problem emergency
+    steps:
+      - intent: drug_problem
+      - action: utter_drug_problem_help
+      - action: action_assess_emergency_level
+      - intent: emergency
+      - action: utter_emergency_response
+      - action: action_assess_emergency_level
+
+  - story: Direct emergency
+    steps:
+      - intent: emergency
+      - action: utter_emergency_response
+      - action: action_assess_emergency_level
+
+  - story: Family concerns discussion
+    steps:
+      - intent: family_concerns
+      - action: utter_family_support
+      - intent: affirm
+      - action: action_provide_resources
+
+  - story: Academic impact recovery
+    steps:
+      - intent: academic_impact
+      - action: utter_academic_recovery
+      - intent: affirm
+      - action: action_provide_resources
+
+  - story: Help request with cultism info
+    steps:
+      - intent: ask_for_help
+      - action: utter_ask_how_can_help
+      - intent: ask_about_cultism
+      - action: utter_cultism_info
+
+  - story: Consequences with alternatives
+    steps:
+      - intent: ask_consequences
+      - action: utter_consequences_overview
+      - intent: ask_alternatives
+      - action: utter_healthy_alternatives
+
+  - story: Multi topic discussion
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_about_alcohol
+      - action: utter_alcohol_info
+      - intent: ask_about_drugs
+      - action: utter_drug_info
+
+  - story: Alcohol denial to acceptance
+    steps:
+      - intent: alcohol_problem
+      - action: utter_alcohol_problem_help
+      - action: action_assess_emergency_level
+      - intent: deny
+      - action: utter_consequences_overview
+      - intent: affirm
+      - action: action_provide_resources
+
+  - story: Positive change path
+    steps:
+      - intent: cultism_pressure
+      - action: utter_cultism_pressure_advice
+      - intent: affirm
+      - action: utter_healthy_alternatives
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: Complete support journey
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: drug_pressure
+      - action: utter_drug_pressure_advice
+      - intent: ask_consequences
+      - action: utter_consequences_overview
+      - intent: ask_alternatives
+      - action: utter_healthy_alternatives
+
+  - story: Emergency with cult escape
+    steps:
+      - intent: emergency
+      - action: utter_emergency_response
+      - action: action_assess_emergency_level
+      - intent: cultism_escape
+      - action: utter_cultism_escape_help
+
+  - story: Academic and addiction issues
+    steps:
+      - intent: academic_impact
+      - action: utter_academic_recovery
+      - intent: alcohol_problem
+      - action: utter_alcohol_problem_help
+      - action: action_assess_emergency_level

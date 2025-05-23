@@ -1,0 +1,257 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - hey
+      - good morning
+      - good afternoon
+      - good evening
+      - hi there
+      - hello there
+      - hey buddy
+      - what's up
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you later
+      - talk to you later
+      - bye bye
+      - catch you later
+      - farewell
+      - take care
+      - have a good day
+      - thanks and goodbye
+
+  - intent: affirm
+    examples: |
+      - yes
+      - yeah
+      - yep
+      - sure
+      - absolutely
+      - correct
+      - right
+      - exactly
+      - of course
+      - definitely
+
+  - intent: deny
+    examples: |
+      - no
+      - nope
+      - not really
+      - no way
+      - never
+      - I don't think so
+      - not at all
+      - negative
+      - nah
+      - I disagree
+
+  - intent: ask_about_cultism
+    examples: |
+      - what is cultism
+      - tell me about cults
+      - what are secret cults
+      - explain cultism
+      - what is a cult
+      - how do I know if something is a cult
+      - cult activities
+      - secret societies
+      - what makes something a cult
+      - cult characteristics
+      - fraternity vs cult
+      - sorority dangers
+      - campus cults
+      - student cults
+
+  - intent: cultism_pressure
+    examples: |
+      - my friends want me to join a cult
+      - someone is pressuring me to join a group
+      - I'm being asked to join a secret society
+      - they want me to be initiated
+      - peer pressure to join cult
+      - friends forcing me into cult
+      - being recruited by cult
+      - campus group wants me to join
+      - initiation ceremony invitation
+      - secret group recruitment
+
+  - intent: cultism_escape
+    examples: |
+      - how do I leave a cult
+      - I want to quit the group
+      - help me leave this organization
+      - getting out of a cult
+      - escaping cult activities
+      - I regret joining
+      - want to stop cult activities
+      - leaving secret society
+      - quitting fraternity cult
+      - getting away from cult members
+
+  - intent: ask_about_alcohol
+    examples: |
+      - what about drinking
+      - tell me about alcohol
+      - is alcohol bad
+      - effects of drinking
+      - alcohol problems
+      - drinking consequences
+      - alcohol addiction
+      - alcoholism
+      - binge drinking
+      - underage drinking
+      - alcohol abuse
+      - drinking and studying
+
+  - intent: alcohol_pressure
+    examples: |
+      - friends want me to drink
+      - peer pressure to drink alcohol
+      - everyone drinks at parties
+      - they say I'm boring for not drinking
+      - party pressure to drink
+      - roommates drinking
+      - social pressure alcohol
+      - friends calling me names for not drinking
+      - feeling left out without alcohol
+      - party culture pressure
+
+  - intent: alcohol_problem
+    examples: |
+      - I think I drink too much
+      - I can't stop drinking
+      - alcohol is affecting my grades
+      - I have a drinking problem
+      - drinking every day
+      - blackouts from drinking
+      - alcohol dependency
+      - need help with drinking
+      - alcohol controlling my life
+      - drinking affecting relationships
+
+  - intent: ask_about_drugs
+    examples: |
+      - what about hard drugs
+      - tell me about drug abuse
+      - effects of drugs
+      - drug addiction
+      - illegal drugs
+      - substance abuse
+      - drug problems
+      - cocaine effects
+      - heroin dangers
+      - methamphetamine risks
+      - cannabis addiction
+      - prescription drug abuse
+
+  - intent: drug_pressure
+    examples: |
+      - friends offering me drugs
+      - peer pressure to try drugs
+      - everyone does drugs here
+      - they say drugs help with stress
+      - being offered cocaine
+      - marijuana peer pressure
+      - party drugs pressure
+      - friends using drugs
+      - drug dealers approaching me
+      - pressure to try substances
+
+  - intent: drug_problem
+    examples: |
+      - I think I'm addicted to drugs
+      - I can't stop using
+      - drugs are ruining my life
+      - need help with drug addiction
+      - using drugs daily
+      - drug dependency
+      - substance abuse problem
+      - drugs affecting studies
+      - drug withdrawal symptoms
+      - overdose concerns
+
+  - intent: ask_for_help
+    examples: |
+      - I need help
+      - can you help me
+      - what should I do
+      - I'm struggling
+      - I need advice
+      - help me please
+      - I don't know what to do
+      - seeking guidance
+      - need counseling
+      - where can I get help
+
+  - intent: emergency
+    examples: |
+      - I'm in danger
+      - someone is threatening me
+      - I need immediate help
+      - emergency situation
+      - I'm scared
+      - feeling unsafe
+      - being harmed
+      - violent situation
+      - need police
+      - medical emergency
+
+  - intent: ask_alternatives
+    examples: |
+      - what else can I do for fun
+      - healthy alternatives
+      - other activities
+      - sober activities
+      - fun without alcohol
+      - entertainment options
+      - hobbies suggestions
+      - social activities without drugs
+      - healthy lifestyle choices
+      - positive peer groups
+
+  - intent: ask_consequences
+    examples: |
+      - what happens if I join a cult
+      - consequences of drinking
+      - effects of drug use
+      - legal consequences
+      - academic consequences
+      - health effects
+      - long term effects
+      - risks involved
+      - dangers of cultism
+      - what could go wrong
+
+  - intent: family_concerns
+    examples: |
+      - my family is worried about me
+      - parents found out
+      - family intervention
+      - disappointing my family
+      - family relationships affected
+      - parents angry about drinking
+      - family trust issues
+      - letting family down
+      - family expectations
+      - parents' reaction
+
+  - intent: academic_impact
+    examples: |
+      - affecting my grades
+      - can't focus on studies
+      - missing classes
+      - academic performance declining
+      - studies suffering
+      - failing exams
+      - concentration problems
+      - school work affected
+      - academic probation
+      - scholarship at risk
